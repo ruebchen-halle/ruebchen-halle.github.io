@@ -15,6 +15,22 @@
     </style>
   </head>
   <body>
+    <script type="text/javascript">
+      const loc = window.location.toString();
+      const params = loc.split("?")[1];
+      if (params) {
+        for (var child of document.body.children) {
+          document.body.removeChild(child);
+        }
+        const serviceUrl =
+          "https://script.google.com/macros/s/AKfycbz8KUWE83lm1_ITwAhRcsEoaDgZuUJyLU14f4rQfj2GbCwerbymbAwvcDzMbQgNkGMoDA/exec";
+        const iframe = document.createElement("iframe");
+        iframe.frameBorder = 0;
+        iframe.src = serviceUrl + "?" + params;
+        iframe.width = "100%";
+        document.body.appendChild(iframe);
+      }
+    </script>
     <iframe
       frameborder="0"
       src="https://script.google.com/macros/s/AKfycbz8KUWE83lm1_ITwAhRcsEoaDgZuUJyLU14f4rQfj2GbCwerbymbAwvcDzMbQgNkGMoDA/exec"
