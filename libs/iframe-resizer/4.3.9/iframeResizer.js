@@ -858,7 +858,7 @@
           ') targetOrigin: ' +
           target
       )
-      iframe.contentWindow.postMessage(msgId + msg, target)
+      window.gasFrame.postMessage(msgId + msg, target)
     }
 
     function iFrameNotFound() {
@@ -1456,11 +1456,5 @@
     createJQueryPublicMethod(window.jQuery)
   }
 
-  if (typeof define === 'function' && define.amd) {
-    define([], factory)
-  } else if (typeof module === 'object' && typeof module.exports === 'object') {
-    // Node for browserfy
-    module.exports = factory()
-  }
   window.iFrameResize = window.iFrameResize || factory()
 })()

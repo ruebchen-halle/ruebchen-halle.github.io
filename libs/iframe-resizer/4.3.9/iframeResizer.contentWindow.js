@@ -1050,7 +1050,7 @@
       }
 
       currentHeight =
-        undefined === customHeight ? getHeight[heightCalcMode]() : customHeight
+        undefined === customHeight ? Number(getHeight[heightCalcMode]()) + 8 : customHeight
       currentWidth =
         undefined === customWidth ? getWidth[widthCalcMode]() : customWidth
 
@@ -1301,5 +1301,5 @@
   addEventListener(window, 'readystatechange', chkLateLoaded)
   chkLateLoaded()
 
-  
+
 })()
